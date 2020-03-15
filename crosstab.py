@@ -1,4 +1,4 @@
-from sqlalchemy.sql import FromClause, column, ColumnElement
+from sqlalchemy.sql import FromClause, column, ColumnElement, text
 from sqlalchemy.orm import Query
 from sqlalchemy.ext.compiler import compiles
 
@@ -23,9 +23,9 @@ class crosstab(FromClause):
 
         #Don't rely on the user to order their stuff
         if auto_order:
-            self.stmt = self.stmt.order_by('1,2')
+            self.stmt = self.stmt.order_by(text('1,2'))
             if self.categories is not None:
-                self.categories = self.categories.order_by('1')
+                self.categories = self.categories.order_by(text('1'))
 
     def _populate_column_collection(self):
         self._columns.update(
