@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='crosstab',
-    version='0.1.ht0',
+    version='0.1.ht1',
     description='New grammar for SQLAlchemy to make handling the crosstab() tablefunc (i.e. pivot tables) in Postgresql easy peasy',
     long_description='',
     # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -19,6 +19,6 @@ setup(
     zip_safe=False,
     install_requires=[
         'sqlalchemy',
-        'psycopg2'
+        'psycopg2-binary'
     ],
 )
